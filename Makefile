@@ -5,7 +5,7 @@ OBJS=$(SRCS:SRCS%.c=OBJS%.o)
 HEADER=INCLUDES/fractol.h
 INCLUDES=INCLUDES
 LIBFT=libft/libft.a
-FLAGS = -Wall -Wextra -Werror
+FLAGS =# -Wall -Wextra -Werror
 LIBFTCFILES = libft/*.c
 A_FILES=libft/libft.a libft/libftprintf.a
 NO_COLOR=\x1b[0m
@@ -21,7 +21,7 @@ override G +=
 all: $(NAME)
 
 $(NAME): $(OBJS) $(INCLUDES) $(LIBFT)
-	@gcc $(A_FILES) -I$(INCLUDES) $(OBJS) -o $(NAME)
+	@gcc -I /usr/local/include $(A_FILES) -I$(INCLUDES) $(OBJS) -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit  -o $(NAME)
 	@$(ECHO) "$(COMPILING_STRING)"
 
 $(LIBFT): $(LIBFTCILES)
@@ -40,7 +40,7 @@ fclean: clean
 	@$(MAKE) -C libft fclean
 	@$(ECHO) "$(REMOVE_ALL_STRING)"
 
-git:
+git: clean
 	git add .
 	git commit -am "$(G)"
 	git push
