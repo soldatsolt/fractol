@@ -1,6 +1,6 @@
 MAKE=make
 NAME=fractol
-SRCS=SRCS/main.c
+SRCS=SRCS/main.c SRCS/mandelbrot.c SRCS/brsh.c
 OBJS=$(SRCS:SRCS%.c=OBJS%.o)
 HEADER=INCLUDES/fractol.h
 INCLUDES=INCLUDES
