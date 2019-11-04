@@ -2,8 +2,8 @@
 
 void				main_drow(int x, int y, t_fractol *f)
 {
-	f->color = 0xff0000;
-	f->mlx.data[y * SCREEN_WIDTH + x] = f->color;
+	f->color = 0x00ff00;
+	f->mlx.data[(y)* SCREEN_WIDTH + x] = f->color;
 }
 
 static void			calculate_cmplx(int x, int y, t_fractol *fractol)

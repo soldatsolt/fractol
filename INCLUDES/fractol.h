@@ -4,8 +4,19 @@
 # include <mlx.h>
 # include <math.h>
 
-#define SCREEN_WIDTH 1920
-#define SCREEN_HEIGHT 1080
+# define SCREEN_WIDTH 1080
+# define SCREEN_HEIGHT 720
+
+# define M_SCRL_UP 4
+# define M_SCRL_DOWN 5
+# define M_L_CLCK 1
+# define M_R_CLCK 2
+# define B_ESC 53
+# define B_UP 126
+# define B_DOWN 125
+# define B_LEFT 123
+# define B_RIGHT 124
+# define B_SPACE 49
 
 # define MAX_X		1.0
 # define MIN_X		-3.0
@@ -26,6 +37,12 @@ typedef struct		s_mlx
 	int				endn;
 }					t_mlx;
 
+typedef struct		s_map
+{
+	int				x;
+	int				y;
+}					t_map;
+
 typedef struct		s_cmplx
 {
 	int				key;
@@ -42,6 +59,7 @@ typedef struct		s_fractol
 	int				key;
 	int				color;
 	t_mlx			mlx;
+	t_map			map;
 	t_cmplx			cmplx;
 }					t_fractol;
 
